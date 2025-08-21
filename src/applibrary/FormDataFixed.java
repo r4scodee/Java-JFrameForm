@@ -36,7 +36,7 @@ public class FormDataFixed extends javax.swing.JFrame {
         txt_nis = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        btn_submit = new javax.swing.JButton();
+        btn_delete = new javax.swing.JButton();
         btn_back = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -54,6 +54,8 @@ public class FormDataFixed extends javax.swing.JFrame {
         var_male = new javax.swing.JRadioButton();
         cmb_kelas = new javax.swing.JComboBox<>();
         cmb_kompetensi = new javax.swing.JComboBox<>();
+        btn_submit1 = new javax.swing.JButton();
+        btn_edit = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -104,21 +106,22 @@ public class FormDataFixed extends javax.swing.JFrame {
         jLabel4.setText("Kelas");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
-        btn_submit.setBackground(new java.awt.Color(51, 153, 255));
-        btn_submit.setForeground(new java.awt.Color(255, 255, 255));
-        btn_submit.setText("Submit");
-        btn_submit.setBorderPainted(false);
-        btn_submit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_submit.addActionListener(new java.awt.event.ActionListener() {
+        btn_delete.setBackground(new java.awt.Color(255, 51, 51));
+        btn_delete.setForeground(new java.awt.Color(255, 255, 255));
+        btn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/trash.png"))); // NOI18N
+        btn_delete.setText("Delete");
+        btn_delete.setBorderPainted(false);
+        btn_delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_submitActionPerformed(evt);
+                btn_deleteActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_submit, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+        jPanel1.add(btn_delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, -1, -1));
 
         btn_back.setBackground(new java.awt.Color(153, 153, 153));
         btn_back.setForeground(new java.awt.Color(255, 255, 255));
-        btn_back.setText("kembali");
+        btn_back.setText("Back");
         btn_back.setBorderPainted(false);
         btn_back.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_back.addActionListener(new java.awt.event.ActionListener() {
@@ -126,7 +129,7 @@ public class FormDataFixed extends javax.swing.JFrame {
                 btn_backActionPerformed(evt);
             }
         });
-        jPanel1.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        jPanel1.add(btn_back, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setText("Kompetensi");
@@ -219,6 +222,32 @@ public class FormDataFixed extends javax.swing.JFrame {
         cmb_kompetensi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Pilih Kompetensi --", "Rekayasa Perangkat Lunak", "Desain Komunikasi Visual", "Teknik Komputer Jaringan" }));
         jPanel1.add(cmb_kompetensi, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 210, -1));
 
+        btn_submit1.setBackground(new java.awt.Color(51, 153, 255));
+        btn_submit1.setForeground(new java.awt.Color(255, 255, 255));
+        btn_submit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/disk (1).png"))); // NOI18N
+        btn_submit1.setText("Save");
+        btn_submit1.setBorderPainted(false);
+        btn_submit1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_submit1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_submit1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_submit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
+
+        btn_edit.setBackground(new java.awt.Color(255, 102, 51));
+        btn_edit.setForeground(new java.awt.Color(255, 255, 255));
+        btn_edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit (1).png"))); // NOI18N
+        btn_edit.setText("Edit");
+        btn_edit.setBorderPainted(false);
+        btn_edit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,7 +287,7 @@ public class FormDataFixed extends javax.swing.JFrame {
         
     }
     
-    private void btn_submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submitActionPerformed
+    private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed
         // TODO add your handling code here:
         String nama;
         String nis;
@@ -306,7 +335,7 @@ public class FormDataFixed extends javax.swing.JFrame {
         buttonGroup1.clearSelection();
         
         txt_nama.requestFocus();
-    }//GEN-LAST:event_btn_submitActionPerformed
+    }//GEN-LAST:event_btn_deleteActionPerformed
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         // TODO add your handling code here:
@@ -347,6 +376,14 @@ public class FormDataFixed extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_kelasMouseClicked
 
+    private void btn_submit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_submit1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_submit1ActionPerformed
+
+    private void btn_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_editActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -383,7 +420,9 @@ public class FormDataFixed extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_back;
-    private javax.swing.JButton btn_submit;
+    private javax.swing.JButton btn_delete;
+    private javax.swing.JButton btn_edit;
+    private javax.swing.JButton btn_submit1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cmb_kelas;
